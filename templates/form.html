@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Churn Predictor</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e6e6e6;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        h2 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        form {
+            background-color: #1a1d2d;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            margin-bottom: 5px;
+            color: #cfd2dc;
+        }
+
+        input[type="number"],
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            background-color: #2a2d3e;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            background-color: #4f46e5;
+            color: #ffffff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #6366f1;
+        }
+    </style>
+</head>
+<body>
+    <h2>Enter Employee Details</h2>
+    <form method="POST" action="/predict">
+        <label>Employee ID:</label>
+        <input type="text" name="EmployeeID" required>
+
+        <label>Employee Name:</label>
+        <input type="text" name="EmployeeName" required>
+
+        <label>Age:</label>
+        <input type="number" name="Age" min="0" required>
+
+        <label>Monthly Income:</label>
+        <input type="number" name="MonthlyIncome" min="0" required>
+
+        <label>Distance From Home (KM):</label>
+        <input type="number" name="DistanceFromHome" min="0" required>
+
+        <label>OverTime (1 = Yes, 0 = No):</label>
+        <input type="number" name="OverTime_Yes" min="0" max="1" required>
+
+        <label>Years At Company:</label>
+        <input type="number" name="YearsAtCompany" required>
+
+        <label>Job Satisfaction (1 to 4):</label>
+        <input type="number" name="JobSatisfaction" min="1" max="4" required>
+
+        <label>Department:</label>
+        <select name="Department">
+            <option value="Research & Development">Research & Development</option>
+            <option value="Sales">Sales</option>
+        </select>
+
+        <label>Education Field:</label>
+        <select name="EducationField">
+            <option value="Life Sciences">Life Sciences</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Other">Other</option>
+            <option value="Technical Degree">Technical Degree</option>
+        </select>
+
+        <label>Job Role:</label>
+        <select name="JobRole">
+            <option value="Technician">Laboratory Technician</option>
+            <option value="Manager">Manager</option>
+            <option value="Manufacturing Director">Manufacturing Director</option>
+            <option value="Research Director">Research Director</option>
+            <option value="Research Scientist">Research Scientist</option>
+            <option value="Sales Executive">Sales Executive</option>
+            <option value="Sales Representative">Sales Representative</option>
+        </select>
+
+        <label>Marital Status:</label>
+        <select name="MaritalStatus">
+            <option value="Married">Married</option>
+            <option value="Single">Single</option>
+        </select>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
