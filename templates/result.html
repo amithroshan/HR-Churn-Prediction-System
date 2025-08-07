@@ -168,25 +168,26 @@
     </div>
 
     <script>
-        const ctx = document.getElementById('churnPieChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: ['Churn', 'Retention'],
-                datasets: [{
-                    data: [{{ prediction }}, {{ 100 - prediction }}],
-                    backgroundColor: ['#ef4444', '#10b981']
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'bottom'
-                    }
+    const ctx = document.getElementById('churnPieChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Churn', 'Retention'],
+            datasets: [{
+                data: [parseFloat('{{ prediction }}'), 100 - parseFloat('{{ prediction }}')],
+                backgroundColor: ['#ef4444', '#10b981']
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom'
                 }
             }
-        });
-    </script>
+        }
+    });
+</script>
+
 </body>
 </html>
