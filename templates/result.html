@@ -130,9 +130,9 @@
             <p><strong>Employee Name:</strong> {{ form_data.EmployeeName }}</p>
             <p><strong>Churn Probability:</strong> {{ prediction }}%</p>
 
-            {% if prediction|float >= 70 %}
+            {% if prediction|float >= 60 %}
                 <p class="risk-high"><strong>🚨 Risk Level:</strong> 🔴 High Risk</p>
-            {% elif prediction|float >= 40 %}
+            {% elif prediction|float >= 50 %}
                 <p class="risk-medium"><strong>⚠️ Risk Level:</strong> 🟡 Medium Risk</p>
             {% else %}
                 <p class="risk-low"><strong>✅ Risk Level:</strong> 🟢 Low Risk</p>
