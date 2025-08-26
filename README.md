@@ -46,7 +46,7 @@ This project is a web-based **HR Churn Prediction System** that allows users to 
 ## 🧪 How to Run Locally
 ### ✅ Step 1: **Clone the repository**  
    ```bash
-   git clone https://github.com/yourusername/hr-churn-prediction.git
+   git clone https://github.com/amithroshan/hr-churn-prediction.git
    cd hr-churn-prediction
 ```
 ### ✅ Step 2: Install dependencies
